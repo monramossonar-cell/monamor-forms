@@ -19,6 +19,7 @@
       --dk-bg:     #3B2D30;
       --dk-brd:    #5E4E51;
       --dk-head:   #EBE4E0;
+      --dk-body:   #C4B8B4;
       --dk-accent: #C08E8E;
       --f-d: 'Optima', Georgia, serif;
       --f-b: 'DM Sans', sans-serif;
@@ -58,7 +59,7 @@
     /* HERO */
     .hero {
       padding: 64px 64px 48px;
-      max-width: 700px;
+      max-width: 640px;
     }
     .hero-lbl {
       font-family: var(--f-d);
@@ -78,18 +79,16 @@
       line-height: 1.1;
       margin-bottom: 16px;
     }
-    .hero h1 em { font-style: italic; color: var(--dk-accent); }
-    .hero p {
-      font-size: 0.95rem;
-      color: var(--dk-accent);
-      opacity: 0.6;
-      line-height: 1.7;
-    }
     .hero-rule {
       width: 40px; height: 1px;
       background: var(--dk-accent);
       opacity: 0.3;
       margin: 24px 0;
+    }
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--dk-body);
+      line-height: 1.7;
     }
 
     /* CARDS */
@@ -106,61 +105,58 @@
       padding: 48px 40px;
       display: flex;
       flex-direction: column;
-      text-decoration: none;
       transition: background .2s;
-      cursor: pointer;
     }
-    .card:hover { background: rgba(255,255,255,0.04); }
-    .card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
-    .card:hover .card-title { color: var(--dk-accent); }
+    .card:hover { background: rgba(255,255,255,0.03); }
 
     .card-num {
       font-family: var(--f-d);
       font-size: 0.55rem;
       letter-spacing: 0.18em;
       color: var(--dk-accent);
-      opacity: 0.5;
+      opacity: 1;
       display: block;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
+      color: #FFFFFF;
     }
     .card-icon {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       display: block;
       margin-bottom: 20px;
     }
     .card-title {
       font-family: var(--f-d);
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       color: var(--dk-head);
       line-height: 1.1;
-      margin-bottom: 12px;
-      transition: color .2s;
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
     }
-    .card-title em { font-style: italic; color: var(--dk-accent); }
     .card-desc {
-      font-size: 0.85rem;
-      color: var(--dk-accent);
-      opacity: 0.55;
-      line-height: 1.65;
+      font-family: var(--f-b);
+      font-size: 0.88rem;
+      color: var(--dk-body);
+      line-height: 1.7;
       flex: 1;
       margin-bottom: 32px;
     }
-    .card-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .card-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #FFFFFF;
+      color: var(--dk-bg);
       font-family: var(--f-d);
-      font-size: 0.6rem;
+      font-size: 0.62rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--dk-accent);
-      opacity: 0.7;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s;
+      align-self: flex-start;
     }
-    .card-arrow {
-      transition: opacity .2s, transform .2s;
-      opacity: 0.5;
-    }
+    .card-btn:hover { background: #EBE4E0; }
 
     /* FOOTER */
     footer {
@@ -174,7 +170,7 @@
       font-family: var(--f-d);
       font-size: 0.6rem;
       color: var(--dk-accent);
-      opacity: 0.4;
+      opacity: 0.35;
       letter-spacing: 0.1em;
     }
     footer a { color: var(--dk-accent); text-decoration: none; opacity: 0.5; transition: opacity .2s; }
@@ -207,36 +203,38 @@
   </header>
 
   <div class="hero">
-    <span class="hero-lbl">Get in Touch</span>
-    <h1>How can we <em>help?</em></h1>
+    <span class="hero-lbl">Learn More</span>
+    <h1>How can we help?</h1>
     <div class="hero-rule"></div>
     <p>Select the type of event below. We respond to all inquiries within 24 hours.</p>
   </div>
 
   <div class="cards">
-    <a class="card" href="/live-music/">
+
+    <div class="card">
       <span class="card-num">01</span>
       <span class="card-icon">🎶</span>
-      <h2 class="card-title">Live <em>Music.</em></h2>
+      <h2 class="card-title">Live Music</h2>
       <p class="card-desc">Private events, corporate dinners, cultural celebrations, restaurant residencies, and festivals across the Pacific Northwest.</p>
-      <span class="card-cta">Inquire <span class="card-arrow">→</span></span>
-    </a>
+      <a class="card-btn" href="/live-music/">Learn More</a>
+    </div>
 
-    <a class="card" href="/weddings/">
+    <div class="card">
       <span class="card-num">02</span>
       <span class="card-icon">💍</span>
-      <h2 class="card-title">Wed<em>dings.</em></h2>
+      <h2 class="card-title">Weddings</h2>
       <p class="card-desc">Ceremony, cocktail hour, and reception music. Boleros, Son Cubano, Cha Cha Chá — music that crosses generations on your most important day.</p>
-      <span class="card-cta">Inquire <span class="card-arrow">→</span></span>
-    </a>
+      <a class="card-btn" href="/weddings/">Learn More</a>
+    </div>
 
-    <a class="card" href="/fundraisers/">
+    <div class="card">
       <span class="card-num">03</span>
       <span class="card-icon">🌟</span>
-      <h2 class="card-title">Fund<em>raisers.</em></h2>
+      <h2 class="card-title">Fundraisers</h2>
       <p class="card-desc">Galas, benefit concerts, and nonprofit events. Pricing is tailored to each cause — reach out and let's talk about your event.</p>
-      <span class="card-cta">Inquire <span class="card-arrow">→</span></span>
-    </a>
+      <a class="card-btn" href="/fundraisers/">Learn More</a>
+    </div>
+
   </div>
 
   <footer>
