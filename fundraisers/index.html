@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Monamor — Fundraiser Inquiry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --dk-bg: #3B2D30; --dk-brd: #5E4E51;
+      --dk-head: #EBE4E0; --dk-body: #A89994; --dk-accent: #C08E8E;
+      --f-d: 'Optima', Georgia, serif; --f-b: 'DM Sans', sans-serif;
+    }
+    body {
+      font-family: var(--f-b); font-weight: 300;
+      background: var(--dk-bg); color: var(--dk-head);
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 60px 40px; -webkit-font-smoothing: antialiased;
+    }
+
+    .back {
+      position: fixed; top: 32px; left: 40px;
+      font-family: var(--f-d); font-size: 0.58rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--dk-accent); opacity: 0.5;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .back:hover { opacity: 1; }
+
+    .wrap { max-width: 480px; width: 100%; text-align: center; }
+
+    .logo { height: 48px; width: auto; margin: 0 auto 40px; display: block; }
+
+    .lbl {
+      font-family: var(--f-d); font-size: 0.6rem;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--dk-accent); opacity: 0.7;
+      display: block; margin-bottom: 14px;
+    }
+    h1 {
+      font-family: var(--f-d); font-weight: 300;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--dk-head); line-height: 1.1; margin-bottom: 14px;
+    }
+    h1 em { font-style: italic; color: var(--dk-accent); }
+
+    .rule { width: 40px; height: 1px; background: var(--dk-accent); opacity: 0.3; margin: 20px auto 24px; }
+
+    .note {
+      font-size: 0.88rem; color: var(--dk-body);
+      line-height: 1.7; margin-bottom: 40px;
+      border: 1px solid var(--dk-brd);
+      padding: 20px 24px; text-align: left;
+    }
+    .note strong { color: var(--dk-head); font-weight: 400; }
+
+    /* FORM */
+    form { text-align: left; }
+
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block; font-family: var(--f-d);
+      font-size: 0.55rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--dk-accent);
+      opacity: 0.6; margin-bottom: 6px;
+    }
+    .field input, .field textarea, .field select {
+      width: 100%; padding: 12px 14px;
+      border: 1px solid var(--dk-brd);
+      background: rgba(255,255,255,0.04);
+      font-family: var(--f-b); font-size: 0.92rem;
+      color: var(--dk-head); outline: none;
+      transition: border-color .2s; appearance: none;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--dk-body); opacity: 0.4; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--dk-accent); }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .field select {
+      cursor: pointer; color: var(--dk-body);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C08E8E' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
+    }
+    .field select option { background: var(--dk-bg); }
+
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .btn {
+      display: block; width: 100%; padding: 14px;
+      background: var(--dk-accent); color: var(--dk-head);
+      font-family: var(--f-d); font-size: 0.65rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      border: none; cursor: pointer; margin-top: 8px;
+      transition: background .2s;
+    }
+    .btn:hover { background: #B07070; }
+    .form-note {
+      font-family: var(--f-d); font-size: 0.55rem;
+      color: var(--dk-body); opacity: 0.4;
+      text-align: center; margin-top: 14px; letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+      .row { grid-template-columns: 1fr; }
+      .back { top: 20px; left: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back" href="/"> ← Back</a>
+
+  <!-- Hidden static form for Netlify -->
+  <form name="fundraiser-inquiry" netlify hidden>
+    <input name="first-name">
+    <input name="last-name">
+    <input type="email" name="email">
+    <input name="organization">
+    <input name="event-type">
+    <input name="message">
+    <input name="bot-field">
+  </form>
+
+  <div class="wrap">
+    <svg class="logo" viewBox="37 118 310 148" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#C08E8E" d="M 90.460938 187.84375 C 94.402344 207.863281 94.980469 216.679688 95.300781 219.058594 C 106.109375 207.300781 102.5625 181.003906 90.460938 187.84375 Z M 88.246094 173.984375 C 92.300781 171.292969 103.472656 160.953125 109.164062 153.046875 C 125.445312 130.425781 80.632812 127.488281 88.246094 173.984375 Z M 73.347656 192.339844 C 73.671875 193.601562 74.109375 194.726562 74.007812 196.441406 C 73.910156 198.027344 71.0625 197.71875 70.710938 195.585938 C 70.253906 192.84375 66.484375 188.105469 64.207031 185.863281 C 61.796875 183.492188 57.292969 182.085938 54.199219 185.378906 C 40.652344 199.796875 71.878906 229.363281 90.824219 222.191406 C 89.824219 211.84375 88.546875 201.570312 86.554688 191.390625 C 85.945312 191.550781 80.628906 197.453125 82.597656 207.15625 C 82.757812 207.949219 82.816406 208.808594 82.207031 209.253906 C 76.546875 209.683594 73.207031 194.488281 84.792969 186.007812 C 85.589844 185.425781 85.566406 186.546875 84.332031 179.699219 C 80.050781 182.132812 74.609375 187.40625 73.347656 192.339844 Z M 95.546875 221.246094 C 96.726562 232.460938 97.429688 249.988281 86.738281 253.519531 C 80.613281 255.539062 74.976562 250.542969 76.394531 245.363281 C 78.128906 238.875 87.6875 242.136719 85.804688 248.605469 C 91.191406 244.070312 91.613281 231.144531 90.933594 224.109375 C 65.632812 230.605469 37.507812 200.441406 48.1875 184.617188 C 52.453125 178.292969 63.5 177.691406 71.769531 189.429688 C 72.210938 188.871094 74.617188 183.074219 83.757812 176.9375 C 72.921875 119.449219 121.75 127.652344 114.574219 149.488281 C 111.0625 160.164062 94.152344 173.464844 88.441406 176.960938 C 88.875 179.773438 89.207031 181.050781 89.667969 183.828125 C 91.070312 183.828125 95.742188 182.613281 100.707031 187.769531 C 104.289062 191.488281 104.773438 197.429688 104.132812 202.570312 C 102.777344 213.488281 98.382812 217.96875 95.546875 221.246094"/>
+    </svg>
+
+    <span class="lbl">Fundraisers</span>
+    <h1>Let's talk about <em>your cause.</em></h1>
+    <div class="rule"></div>
+
+    <div class="note">
+      <strong>Pricing is done on a case by case basis.</strong> Every fundraiser is different — the cause, the venue, the audience, the format. Tell us about your event and we'll put together a proposal that works for you.
+    </div>
+
+    <form name="fundraiser-inquiry" method="POST" data-netlify="true"
+          netlify-honeypot="bot-field" action="/fundraisers/thank-you/">
+      <input type="hidden" name="form-name" value="fundraiser-inquiry">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <div class="row">
+        <div class="field">
+          <label>First Name</label>
+          <input name="first-name" placeholder="Ana" required>
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input name="last-name" placeholder="García" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="field">
+        <label>Organization</label>
+        <input name="organization" placeholder="Organization or cause name">
+      </div>
+
+      <div class="field">
+        <label>Event Type</label>
+        <select name="event-type">
+          <option value="">Select...</option>
+          <option>Gala / Benefit dinner</option>
+          <option>Benefit concert</option>
+          <option>Nonprofit celebration</option>
+          <option>Community event</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tell us about your event</label>
+        <textarea name="message" placeholder="Date, venue, expected attendance, what you're envisioning..."></textarea>
+      </div>
+
+      <button class="btn" type="submit">Send Inquiry →</button>
+      <p class="form-note">We respond within 24 hours · 206.816.2152</p>
+    </form>
+  </div>
+
+</body>
+</html>
