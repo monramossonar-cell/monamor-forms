@@ -509,8 +509,8 @@
     <input name="bot-field">
   </form>
 
-  <!-- GATE -->
-  <div class="gate-page" id="gate-page">
+  <!-- Legacy pricing gate kept hidden for layout compatibility -->
+  <div class="gate-page" id="gate-page" style="display: none;">
     <svg class="gate-logo" viewBox="37 118 310 148" xmlns="http://www.w3.org/2000/svg">
       <path fill="#C08E8E" d="M 90.460938 187.84375 C 94.402344 207.863281 94.980469 216.679688 95.300781 219.058594 C 106.109375 207.300781 102.5625 181.003906 90.460938 187.84375 Z M 88.246094 173.984375 C 92.300781 171.292969 103.472656 160.953125 109.164062 153.046875 C 125.445312 130.425781 80.632812 127.488281 88.246094 173.984375 Z M 73.347656 192.339844 C 73.671875 193.601562 74.109375 194.726562 74.007812 196.441406 C 73.910156 198.027344 71.0625 197.71875 70.710938 195.585938 C 70.253906 192.84375 66.484375 188.105469 64.207031 185.863281 C 61.796875 183.492188 57.292969 182.085938 54.199219 185.378906 C 40.652344 199.796875 71.878906 229.363281 90.824219 222.191406 C 89.824219 211.84375 88.546875 201.570312 86.554688 191.390625 C 85.945312 191.550781 80.628906 197.453125 82.597656 207.15625 C 82.757812 207.949219 82.816406 208.808594 82.207031 209.253906 C 76.546875 209.683594 73.207031 194.488281 84.792969 186.007812 C 85.589844 185.425781 85.566406 186.546875 84.332031 179.699219 C 80.050781 182.132812 74.609375 187.40625 73.347656 192.339844 Z M 95.546875 221.246094 C 96.726562 232.460938 97.429688 249.988281 86.738281 253.519531 C 80.613281 255.539062 74.976562 250.542969 76.394531 245.363281 C 78.128906 238.875 87.6875 242.136719 85.804688 248.605469 C 91.191406 244.070312 91.613281 231.144531 90.933594 224.109375 C 65.632812 230.605469 37.507812 200.441406 48.1875 184.617188 C 52.453125 178.292969 63.5 177.691406 71.769531 189.429688 C 72.210938 188.871094 74.617188 183.074219 83.757812 176.9375 C 72.921875 119.449219 121.75 127.652344 114.574219 149.488281 C 111.0625 160.164062 94.152344 173.464844 88.441406 176.960938 C 88.875 179.773438 89.207031 181.050781 89.667969 183.828125 C 91.070312 183.828125 95.742188 182.613281 100.707031 187.769531 C 104.289062 191.488281 104.773438 197.429688 104.132812 202.570312 C 102.777344 213.488281 98.382812 217.96875 95.546875 221.246094"/>
       <g transform="matrix(1,0,0,1,109,172)" fill="#C08E8E">
@@ -530,7 +530,7 @@
     <p class="gate-sub">Ceremony · Cocktail Hour · Reception. Enter your details to access our full wedding pricing.</p>
 
     <form class="gate-form" id="gate-form" name="wedding-inquiry" method="POST"
-          data-netlify="true" netlify-honeypot="bot-field" onsubmit="return revealContent(event)">
+          data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="wedding-inquiry">
       <input type="hidden" name="offering" value="Weddings">
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -542,8 +542,8 @@
     </form>
   </div>
 
-  <!-- FULL CONTENT — hidden until email submitted -->
-  <div id="content-locked" hidden>
+  <!-- FULL CONTENT -->
+  <div id="content-locked">
     <div class="scroll-hint">
     <span class="scroll-hint-lbl">Scroll</span>
     <div class="scroll-hint-line"></div>
@@ -840,26 +840,6 @@
     </div>
   </section>
   </div>
-
-  <script>
-  async function revealContent(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new URLSearchParams(new FormData(form)).toString();
-    try {
-      await fetch('/', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: data
-      });
-    } catch (err) { console.error(err); }
-    document.getElementById('gate-page').style.display = 'none';
-    const content = document.getElementById('content-locked');
-    content.hidden = false;
-    content.scrollIntoView({behavior: 'smooth'});
-    return false;
-  }
-  </script>
 
 </body>
 </html>
