@@ -500,12 +500,14 @@
 </head>
 <body>
 
-  <!-- Hidden static form for Netlify -->
-  <form name="wedding-inquiry" netlify hidden>
-    <input name="first-name">
-    <input name="last-name">
+  <!-- Hidden static form for Netlify — field names must match the real inquiry form below -->
+  <form name="wedding-inquiry" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="wedding-inquiry">
+    <input name="name">
     <input type="email" name="email">
-    <input name="offering">
+    <input name="wedding-date">
+    <input name="service">
+    <textarea name="message"></textarea>
     <input name="bot-field">
   </form>
 
