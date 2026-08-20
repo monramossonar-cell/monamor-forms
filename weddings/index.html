@@ -341,6 +341,7 @@
       padding: 48px 68px;
       justify-content: center;
       align-items: center;
+      overflow-y: auto;
     }
 
     .form-inner { max-width: 560px; width: 100%; }
@@ -444,6 +445,9 @@
       .cover-title { font-size: 3rem; }
       .pkg-grid { grid-template-columns: 1fr; overflow-y: auto; }
       .form-grid { grid-template-columns: 1fr; }
+      /* Stacked fields make the form taller than the viewport: scroll from the
+         top instead of centring, so the submit button is always reachable. */
+      .pg-form { justify-content: flex-start; }
     }
   
 
@@ -769,7 +773,8 @@
       <h2 class="ttl">Let's make it<br><em>unforgettable.</em></h2>
       <div class="rule"></div>
 
-      <form name="wedding-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form name="wedding-inquiry" method="POST" data-netlify="true"
+            netlify-honeypot="bot-field" action="/weddings/thank-you/">
         <input type="hidden" name="form-name" value="wedding-inquiry">
         <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
