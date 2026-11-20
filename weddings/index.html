@@ -30,7 +30,7 @@
       --f-b: 'DM Sans', -apple-system, sans-serif;
     }
 
-    html { font-size: 16px; scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
       font-family: var(--f-b);
@@ -43,12 +43,9 @@
     }
 
     .page {
-      height: 100vh;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
     .lbl {
@@ -503,6 +500,16 @@
     .w-testimonial-text { font-family:var(--f-d); font-weight:300; font-style:italic; font-size:1.1rem; color:var(--dk-head); line-height:1.8; opacity:.88; margin:0 0 10px; }
     .w-testimonial-attr { font-family:var(--f-d); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--dk-accent); opacity:.85; }
     @media (max-width:700px){ .w-testimonial-text{font-size:.95rem; line-height:1.6;} .w-testimonials{gap:20px;} }
+
+    /* SONGBOOK */
+    .w-songbook { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:6px; }
+    .w-sb-moment { display:block; font-family:var(--f-d); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid rgba(139,85,85,.25); }
+    .w-sb-list { list-style:none; margin:0; padding:0; }
+    .w-sb-list li { font-family:var(--f-d); font-size:1rem; color:var(--head); line-height:1.75; }
+    .w-sb-list li span { font-size:.8rem; color:var(--accent); opacity:.8; font-style:italic; }
+    .w-sb-cta { display:inline-block; margin-top:34px; padding:13px 26px; background:var(--accent); color:#fff; text-decoration:none; font-family:var(--f-d); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; border-radius:2px; }
+    .w-sb-cta:hover { opacity:.88; }
+    @media (max-width:860px){ .w-songbook{ grid-template-columns:1fr; gap:26px; } }
   </style>
 </head>
 <body>
@@ -732,6 +739,68 @@
           <span class="price-add">Sound system: + $400</span>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- SONGBOOK light -->
+  <section class="page pg-content lt" id="listen">
+    <div class="inner">
+      <span class="lbl">The Wedding Songbook</span>
+      <h2 class="ttl">Choose the songs<br>for <em>your day.</em></h2>
+      <div class="rule"></div>
+      <p class="pkg-desc" style="margin-bottom:28px; max-width:640px;">Our wedding repertoire, from the softest boleros to the songs that fill the dance floor. These groupings are just a starting point: every couple hears music differently, and Quizás, Quizás, Quizás can be a slow moment or a reason to dance. Choose your favorites and we'll shape the set around your day.</p>
+      <div class="w-songbook">
+        <div>
+          <span class="w-sb-moment">Cocktail Hour · Romantic</span>
+          <ul class="w-sb-list">
+          <li>Bésame Mucho</li>
+          <li>Sabor a Mí <span>also in English: Be True to Me</span></li>
+          <li>Somos Novios <span>also in English: It's Impossible</span></li>
+          <li>Dos Gardenias</li>
+          <li>Quizás, Quizás, Quizás</li>
+          <li>La Vie en Rose</li>
+          <li>Sway (Quién Será)</li>
+          <li>Corcovado</li>
+          <li>Cómo Fue</li>
+          <li>Veinte Años</li>
+          <li>Luz de Luna</li>
+          <li>Soledad y el Mar</li>
+          <li>Tuyo</li>
+          <li>Juramento</li>
+          <li>Con los Años que me Quedan</li>
+          </ul>
+        </div>
+        <div>
+          <span class="w-sb-moment">Reception · To Dance</span>
+          <ul class="w-sb-list">
+          <li>Piel Canela</li>
+          <li>El Cuarto de Tula</li>
+          <li>Bamboleo</li>
+          <li>Moliendo Café</li>
+          <li>El Bodeguero y Pepe Cabecita</li>
+          <li>El Manisero</li>
+          <li>Guantanamera</li>
+          <li>La Bikina</li>
+          <li>Mi Tierra</li>
+          <li>Te Busco</li>
+          <li>Tu Amor Me Hace Bien</li>
+          <li>Tú Sí Sabes Quererme</li>
+          <li>No Me Llores Más</li>
+          <li>El Carretero</li>
+          </ul>
+        </div>
+        <div>
+          <span class="w-sb-moment">Monamor Originals</span>
+          <ul class="w-sb-list">
+          <li>El Feriado Solo</li>
+          <li>Gaucho</li>
+          <li>Mi Única Boca</li>
+          <li>Cha Cha Cha Pa'la Lluvia <span>by Kevin Connor</span></li>
+          </ul>
+        </div>
+      </div>
+      <a class="w-sb-cta" href="https://open.spotify.com/playlist/48fAXDOuY3cq0X1TKRD2b9" target="_blank" rel="noopener">Listen to the Songbook on Spotify</a>
     </div>
   </section>
 
