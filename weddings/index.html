@@ -497,6 +497,12 @@
       font-family: var(--f-d, Georgia, serif); font-size: 0.58rem;
       color: var(--dk-body); opacity: 0.5; margin-top: 16px; letter-spacing: 0.1em;
     }
+
+    /* TESTIMONIALS */
+    .w-testimonials { display:flex; flex-direction:column; gap:30px; max-width:680px; }
+    .w-testimonial-text { font-family:var(--f-d); font-weight:300; font-style:italic; font-size:1.1rem; color:var(--dk-head); line-height:1.8; opacity:.88; margin:0 0 10px; }
+    .w-testimonial-attr { font-family:var(--f-d); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--dk-accent); opacity:.85; }
+    @media (max-width:700px){ .w-testimonial-text{font-size:.95rem; line-height:1.6;} .w-testimonials{gap:20px;} }
   </style>
 </head>
 <body>
@@ -606,7 +612,7 @@
         <li class="toc-row" onclick="document.getElementById('reception').scrollIntoView({behavior:'smooth'})">
           <span class="toc-n">03</span>
           <span class="toc-name">Reception</span>
-          <span class="toc-hint">Trio · Cuarteto · Quinteto · min 2 hrs</span>
+          <span class="toc-hint">Cuarteto · Quinteto · min 2 hrs</span>
         </li>
         <li class="toc-row" onclick="document.getElementById('includes').scrollIntoView({behavior:'smooth'})">
           <span class="toc-n">04</span>
@@ -705,17 +711,7 @@
       <h2 class="ttl">Full rhythm.<br>Full <em>dance floor.</em></h2>
       <div class="rule"></div>
 
-      <div class="pkg-grid" style="grid-template-columns: repeat(3, 1fr);">
-        <div class="pkg-card">
-          <span class="pkg-hero">3 Musicians · Trio</span>
-          <div class="rule"></div>
-          <p class="pkg-desc">Voice, guitar, and upright bass. A warmer, more intimate sound for a smaller reception.</p>
-          <span class="price-lbl">Minimum 2 hours</span>
-          <span class="price-amt">$1,900</span>
-          <span class="price-add">+ $400 each additional hour</span>
-          <span class="price-add">Sound system: + $250</span>
-        </div>
-
+      <div class="pkg-grid">
         <div class="pkg-card">
           <span class="pkg-hero">4 Musicians · Cuarteto</span>
           <div class="rule"></div>
@@ -757,6 +753,30 @@
         <li>Travel within 30 miles of Seattle included. See our FAQ below for rates beyond that.</li>
         <li>Direct communication with Monica from first inquiry to the last song of the night</li>
       </ul>
+    </div>
+  </section>
+
+
+  <!-- KIND WORDS — testimonials dark -->
+  <section class="page pg-content dk" id="kind-words">
+    <div class="inner">
+      <span class="lbl">Kind Words</span>
+      <h2 class="ttl">What our clients<br><em>say.</em></h2>
+      <div class="rule"></div>
+      <div class="w-testimonials">
+        <div>
+          <p class="w-testimonial-text">"They set a warm, captivating mood from the moment our guests arrived, and left everyone wanting more."</p>
+          <span class="w-testimonial-attr">Beth G. · Corporate Function · Bellevue</span>
+        </div>
+        <div>
+          <p class="w-testimonial-text">"Our non-profit has never had a better experience with any other musical group. Beautiful, melodic, danceable — and played at a perfect volume."</p>
+          <span class="w-testimonial-attr">Joseph S. · Fundraiser · Seattle</span>
+        </div>
+        <div>
+          <p class="w-testimonial-text">"Super responsive and helpful. Definitely enhanced our Hispanic Heritage Month event."</p>
+          <span class="w-testimonial-attr">Courtney A. · Corporate Function · Seattle</span>
+        </div>
+      </div>
     </div>
   </section>
 
